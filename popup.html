@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title i18n-text="TimeTrove Extension"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/common.css"> -->
+    <link rel="stylesheet" type="text/css" href="flatly_bootstrap.min.css">
+
+    <style>
+        .btn-group.autowidth {
+          width: auto;
+        }
+        .btn-group-toggle label.btn {
+          /* margin-right: 5px; Adjust the margin as needed */
+          font-size: 0.8rem; /* Adjust the font size as needed */
+        }
+      </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary" data-bs-theme="dark" style="width: 560px;">
+        <div class="container">
+            <img src="img/icon.png" alt="Icon" width="64" height="64">
+          <a class="navbar-brand" href="#">TimeTrove</a>
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+          <!-- <div class="navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+    </nav>
+
+
+    <!-- Content -->
+      <div class="container-fluid" style="margin-top: 10px; margin-bottom: 20px;">
+        <form>
+
+        <div class="row text-center">
+            <h3>Start exploring ideas now! </h3>
+        </div>
+        
+        <!-- User input fields in form  -->
+        <div class="row">
+            <label for="inputField">How much free time do you have? </label>
+        <div class="col-md-6 offset-md-3">
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputField" placeholder="duration (10mins, 1hr)...">
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="locationSelect">Where are you? </label>
+          <div class="col-md-6 offset-md-3">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" id="locationSelect">
+                <!-- <div class="col-md-3"> -->
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option1" autocomplete="off"> Indoor
+                    </label>
+                <!-- </div> -->
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Outdoor
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option3" autocomplete="off"> Home
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Office
+                </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <label for="topicSelect">Topic of interest: </label>
+          <div class="col-md-6 offset-md-3">
+            <div class="btn-group btn-group-toggle autowidth d-flex flex-wrap" data-toggle="buttons" id="topicSelect">
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> <b><i>Surprise Me!</i></b>
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option1" autocomplete="off"> Connect & Engage
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Creativity
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="options" id="option3" autocomplete="off"> Personal Growth
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Mindfulness & Destress
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Learning
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Entertainment
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> Challenge
+                </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <label for="moodSelect">How are you? </label>
+          <div class="col-md-6 offset-md-3">
+            <div class="btn-group btn-group-toggle autowidth d-flex flex-wrap" data-toggle="buttons" id="moodSelect">
+                <label class="btn btn-secondary" title="happy">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> 😀
+                </label>
+                <label class="btn btn-secondary" title="bored">
+                  <input type="radio" name="options" id="option1" autocomplete="off"> 🥱
+                </label>
+                <label class="btn btn-secondary" title="thoughtful and inquisitive">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> 🤔
+                </label>
+                <label class="btn btn-secondary" title="calm, peaceful and relieved">
+                  <input type="radio" name="options" id="option3" autocomplete="off"> 😌
+                </label>
+                <label class="btn btn-secondary" title="excited, creative and inspired">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> 🤩
+                </label>
+                <label class="btn btn-secondary" title="angry">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> 😡
+                </label>
+                <label class="btn btn-secondary" title="sad or pensive">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> 😔
+                </label>
+                <label class="btn btn-secondary" title="overwhelmed or stressed">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> 😣
+                </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 offset-md-3">
+            <div class="form-group">
+              <label for="inputField">Input your email to receive ideas! </label>
+              <input type="text" class="form-control" id="inputField" placeholder="e.g., timetrove@gmail.com...">
+            </div>
+        </div>
+
+      </form>
+    </div>
+
+
+    <!-- Generate button  -->
+    <div class="container" style="margin-top: 10px; margin-bottom: 20px;">
+        <div class="row text-center">
+            <h3 for="generateIdeaButton">Start idea generation: </h3>
+          <div class="col-md-6 offset-md-3 text-center">
+            <!-- Centered Button -->
+            <button type="button" class="btn btn-primary" id="generateIdeaButton">
+                <img src="img/icon.png" alt="icon image" width="100" height="100"> 
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <div class="footer">
+        <div class="report">
+        </div>
+    </div>
+
+</body>
+</html>
