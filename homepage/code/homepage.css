@@ -22,10 +22,11 @@ h1{
 
 .hero{
     padding: 10px 20px 10px 20px;
-    background-image: url("/TimeTrove/homepage/img/landing\ page\ v2.png");
+    background-image: url("../img/landing_page_v2.png");
     height: 65vh;
     background-size: 100% auto;
-    background-position: center center;
+    /* background-position: center center; */
+    background-position: center top;
     background-repeat: no-repeat;
     display: flex;
     justify-content: space-between;
