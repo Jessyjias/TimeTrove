@@ -17,16 +17,21 @@
         }
         .btn-group-toggle label.btn {
           /* margin-right: 5px; Adjust the margin as needed */
-          font-size: 0.8rem; /* Adjust the font size as needed */
+          font-size: 0.9rem; /* Adjust the font size as needed */
+        }
+        .form-check {
+          margin-right: 10px;
         }
       </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary" data-bs-theme="dark" style="width: 560px;">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="width: 560px; padding-top: 0px; padding-bottom: 0px;">
         <div class="container">
-            <img src="img/icon.png" alt="Icon" width="64" height="64">
-          <a class="navbar-brand" href="#">TimeTrove</a>
+            <a class="navbar-brand" href="#">
+              <img src="img/icon.png" alt="Icon" width="50" height="50"> TimeTrove
+            </a>
+          </div>
           <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button> -->
@@ -51,7 +56,6 @@
               </li>
             </ul>
           </div> -->
-        </div>
     </nav>
 
 
@@ -76,87 +80,109 @@
         <div class="row">
             <label for="locationSelect">Where are you? </label>
           <div class="col-md-6 offset-md-3">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons" id="locationSelect">
-                <!-- <div class="col-md-3"> -->
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option1" autocomplete="off"> Indoor
-                    </label>
-                <!-- </div> -->
-                <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option2" autocomplete="off"> Outdoor
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option3" autocomplete="off"> Home
-                </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> Office
-                </label>
-            </div>
+            <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons" id="locationSelect"> -->
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="locOptions" id="locOption1" value="option1" checked="">
+                <label class="form-check-label" for="locOptions">Indoor</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="locOptions" id="locOption1" value="option1" checked="">
+                <label class="form-check-label" for="locOptions">Outdoor</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="locOptions" id="locOption1" value="option1" checked="">
+                <label class="form-check-label" for="locOptions">Office</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="locOptions" id="locOption1" value="option1" checked="">
+                <label class="form-check-label" for="locOptions">Home</label>
+              </div>
+            <!-- </div> -->
           </div>
         </div>
 
         <div class="row">
             <label for="topicSelect">Topic of interest: </label>
-          <div class="col-md-6 offset-md-3">
-            <div class="btn-group btn-group-toggle autowidth d-flex flex-wrap" data-toggle="buttons" id="topicSelect">
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> <b><i>Surprise Me!</i></b>
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option1" autocomplete="off"> Connect & Engage
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option2" autocomplete="off"> Creativity
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option3" autocomplete="off"> Personal Growth
-                </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> Mindfulness & Destress
-                </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> Learning
-                </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> Entertainment
-                </label>
-                <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> Challenge
-                </label>
+            <div class="col-md-6 offset-md-3">
+            <!-- <div class="btn-group btn-group-toggle autowidth d-flex flex-wrap" data-toggle="buttons" id="topicSelect"> -->
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="option1" checked="">
+                <label class="form-check-label" for="topicOptions"><b><i>Surprise Me!</i></b></label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="option1" checked="">
+                <label class="form-check-label" for="topicOptions">Connect & Engage</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="option1" checked="">
+                <label class="form-check-label" for="topicOptions">Creativity</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="option1" checked="">
+                <label class="form-check-label" for="topicOptions">Personal Growth</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="option1" checked="">
+                <label class="form-check-label" for="topicOptions">Mindfulness & Destress</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="option1" checked="">
+                <label class="form-check-label" for="topicOptions">Learning</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="option1" checked="">
+                <label class="form-check-label" for="topicOptions">Entertainment</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="option1" checked="">
+                <label class="form-check-label" for="topicOptions">Challenge</label>
+              </div>
+            
             </div>
-          </div>
+          
         </div>
 
         <div class="row">
             <label for="moodSelect">How are you? </label>
           <div class="col-md-6 offset-md-3">
-            <div class="btn-group btn-group-toggle autowidth d-flex flex-wrap" data-toggle="buttons" id="moodSelect">
-                <label class="btn btn-secondary" title="happy">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> 😀
-                </label>
-                <label class="btn btn-secondary" title="bored">
-                  <input type="radio" name="options" id="option1" autocomplete="off"> 🥱
-                </label>
-                <label class="btn btn-secondary" title="thoughtful and inquisitive">
-                  <input type="radio" name="options" id="option2" autocomplete="off"> 🤔
-                </label>
-                <label class="btn btn-secondary" title="calm, peaceful and relieved">
-                  <input type="radio" name="options" id="option3" autocomplete="off"> 😌
-                </label>
-                <label class="btn btn-secondary" title="excited, creative and inspired">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> 🤩
-                </label>
-                <label class="btn btn-secondary" title="angry">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> 😡
-                </label>
-                <label class="btn btn-secondary" title="sad or pensive">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> 😔
-                </label>
-                <label class="btn btn-secondary" title="overwhelmed or stressed">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> 😣
-                </label>
+            <!-- <div class="btn-group btn-group-toggle autowidth d-flex flex-wrap" data-toggle="buttons" id="moodSelect"> -->
+                <!-- <label class="btn btn-outline-primary" title="happy">
+                    <input type="radio" name="moodOptions" id="option3" autocomplete="off"> 😀
+                </label> -->
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption1" value="option1" checked="">
+                  <label class="form-check-label" for="moodOptions" title="happy">😀</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption2" value="option1" checked="">
+                  <label class="form-check-label" for="moodOptions" title="bored">🥱</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption3" value="option1" checked="">
+                  <label class="form-check-label" for="moodOptions" title="thoughtful and inquisitive"></label>🤔</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption4" value="option1" checked="">
+                  <label class="form-check-label" for="moodOptions" title="calm, peaceful and relieved"></label>😌</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption5" value="option1" checked="">
+                  <label class="form-check-label" for="moodOptions" title="excited, creative and inspired"></label>🤩</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption6" value="option1" checked="">
+                  <label class="form-check-label" for="moodOptions" title="angry"></label>😡</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption7" value="option1" checked="">
+                  <label class="form-check-label" for="moodOptions" title="sad or pensive"></label>😔</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption8" value="option1" checked="">
+                  <label class="form-check-label" for="moodOptions" title="overwhelmed or stressed"></label>😣</label>
+                </div>
             </div>
-          </div>
+
         </div>
 
         <div class="col-md-6 offset-md-3">
@@ -182,11 +208,6 @@
           </div>
         </div>
       </div>
-
-    <div class="footer">
-        <div class="report">
-        </div>
-    </div>
 
 </body>
 </html>
