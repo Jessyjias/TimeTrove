@@ -32,6 +32,7 @@ h1{
     justify-content: space-between;
     align-items: left;
     padding-left: 50px;
+    margin-bottom: 0;
 }
 
 h2{
@@ -45,7 +46,6 @@ h2{
 
 a{
     font-family: "Cinzel";
-    font-size: 0.8rem;
 }
 
 .button1{
@@ -59,9 +59,77 @@ a{
     font-weight: 600;
     text-decoration: none; /* Add this line to remove the underline */
     margin-top: 20px;
+    margin-bottom: 0;
 }
 
 .hero_text{
     max-width: 750px;
     margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.banner {
+    display: flex;           /* Establishes a flex container */
+    flex-wrap: nowrap;       /* Prevents the children from wrapping to the next line */
+    justify-content: space-around; /* This will space out the child divs evenly across the container's main axis */
+    align-items: center;     /* Aligns children vertically in the center, if needed */
+    background-color: #F3EBD7;
+    padding: 0px 20px 10px 40px;
+    gap: 10px;
+    margin-top: 0;
+}
+
+.banner > div {
+    flex-grow: 1;           /* Optional: Allows each child to grow and take up equal space */
+    text-align: center;     /* Centers the content inside each child div, if desired */
+
+}
+
+h3{
+    font-family: Montserrat;
+    font-size: 0.4rem;
+    font-style: italic;
+    font-weight: 700;
+}
+
+p{
+    font-family: Montserrat;
+    font-size: 0.35rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.banner img{
+    width: 80px;
+    height: auto;
+    padding-top: 20px;
+}   
+
+.banner_img{
+    display: inline-block;
+}
+
+
+
+.footer{
+    background-color: #F3EBD7;
+    padding: 20px 20px 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button2{
+    color: #F3EBD7;
+    background-color: #010B26;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: inline-flex; /* Change display property to inline-flex */
+    justify-content: center;
+    align-items: center;
+    font-family: "Cinzel";
+    font-size: 0.5rem;
+    font-weight: 600;
+    text-decoration: none; /* Add this line to remove the underline */
+    width: fit-content; /* Add this line to make the width fit the content */
 }
