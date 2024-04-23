@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="options_title">Options - TimeTrove</title>
+  <link rel="stylesheet" type="text/css" href="css/flatly_bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="padding-top: 0px; padding-bottom: 0px;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/icon.png" alt="Icon" width="50" height="50"> TimeTrove
+            </a>
+        </div>
+    </nav>
+
+<div class="container p-4">
+    <div class="row text-center">
+        <h3>Settings</h3>
+    </div>
+    
+    <!-- Options setting fields in form  -->
+    <form id="optionForm"> 
+        <div class="form-group m-4">
+            <label for="apiKey" class="form-label">Gemini API Key </label>
+            <input type="password" class="form-control" id="apiKey" placeholder="Your Gemini API Key... ">
+            <small>
+                <span id="options_apikey_hint">Get your Gemini API from Google AI Studio: </span>
+                <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI for Developers</a>
+            </small>
+        </div>
+        <div class="form-group m-4">
+            <button class="btn btn-primary" id="saveSettings">Save</button>
+            <!-- type submit auto clears form?  -->
+            <span id="status"></span>
+        </div>
+
+    </form>
+
+  <script src="options.js"></script>
+</body>
+
+</html>

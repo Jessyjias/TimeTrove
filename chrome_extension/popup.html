@@ -22,17 +22,21 @@
       </style>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="width: 500px; padding-top: 0px; padding-bottom: 0px;">
+<body style="width: 500px;">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="padding-top: 0px; padding-bottom: 0px;">
         <div class="container">
             <a class="navbar-brand" href="#">
               <img src="img/icon.png" alt="Icon" width="50" height="50"> TimeTrove
             </a>
-          </div>
+            <form class="form-inline">
+              <button class="btn btn-outline-success" id="options">Settings</button>
+              <!-- <button class="btn btn-outline-success" id="FAQ">FAQ</button> -->
+            </form>
+        </div>
     </nav>
 
     <!-- Content -->
-      <div class="container" style="width: 500px; padding-top: 10px; padding-bottom: 20px; padding-left: 5%; padding-right: 5%;">
+      <div class="container" style="padding-top: 10px; padding-bottom: 20px; padding-left: 5%; padding-right: 5%;">
         <form id="userForm">
 
         <div class="row text-center">
@@ -42,7 +46,7 @@
         <!-- User input fields in form  -->
         <div class="row">
             <label for="timeInputField">How much free time do you have? </label>
-        <div class="col-md-6 offset-md-3">
+        <div class="col">
             <div class="form-group">
                 <input type="text" class="form-control" id="timeInputField" placeholder="duration (10mins, 1hr)...">
             </div>
@@ -51,7 +55,7 @@
 
         <div class="row">
             <label>Where are you? </label>
-          <div class="col-md-6 offset-md-3">
+          <div class="col">
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="locOptions" id="locOption1" value="indoor" checked="">
                 <label class="form-check-label" for="locOption1">Indoor</label>
@@ -74,7 +78,7 @@
 
         <div class="row">
             <label>Topic of interest: </label>
-            <div class="col-md-6 offset-md-3">
+            <div class="col">
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="surprise" checked="">
                 <label class="form-check-label" for="topicOption1"><b><i>Surprise Me!</i></b></label>
@@ -114,7 +118,7 @@
 
         <div class="row">
             <label>How are you? </label>
-          <div class="col-md-6 offset-md-3">
+          <div class="col">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="moodOptions" id="moodOption1" value="happy" checked="">
                   <label class="form-check-label" for="moodOption1" title="happy">😀</label>
@@ -151,7 +155,7 @@
 
         </div>
 
-        <div class="col-md-6 offset-md-3">
+        <div class="col">
             <!-- <div class="form-group">
               <label for="inputField">Input your email to receive ideas! </label>
               <input type="text" class="form-control" id="inputField" placeholder="e.g., timetrove@gmail.com...">
@@ -163,34 +167,26 @@
             </div>
         </div>
 
-        <div class="row text-center">
+        <div class="row text-center m-3">
           <h3 for="generateIdeaButton">Start idea generation: </h3>
-        <div class="col-md-6 offset-md-3 text-center">
-          <!-- Centered Button -->
-          <button type="submit" class="btn btn-primary" id="generateIdeaButton">
-              <img src="img/icon.png" alt="icon image" width="100" height="100"> 
-          </button>
-        </div>
-      </div>
-
-      </form>
-
-      <p id="content"></p>
-
-
-    </div>
-
-    <!-- Generate button  -->
-    <!-- <div class="container" style="padding-top: 10px; padding-bottom: 20px;">
-        <div class="row text-center">
-            <h3 for="generateIdeaButton">Start idea generation: </h3>
-          <div class="col-md-6 offset-md-3 text-center">
-            <button type="button" class="btn btn-primary" id="generateIdeaButton">
+          <div class="col text-center">
+            <!-- Centered Button -->
+            <button type="submit" class="btn btn-primary" id="generateIdeaButton">
                 <img src="img/icon.png" alt="icon image" width="100" height="100"> 
             </button>
           </div>
         </div>
-      </div> -->
+
+      </form>
+
+      <div class="d-flex justify-content-center m-2">
+        <div class="spinner-border" id="status" style="display: none;">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      
+      <p id="content"></p>
+    </div>
 
 </body>
 

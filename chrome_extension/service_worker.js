@@ -46,16 +46,13 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
       const userPromptChunks = chunkText(request.userPrompt, getCharacterLimit(modelId, request.task));
       sendResponse(userPromptChunks);
     } else if (request.message === "generate") {
-      const apiKey = "";
-      // const modelId = getModelId(request.taskOption);
+      const { apiKey } = await chrome.storage.local.get({ apiKey: "" });
       const userPrompt = request.userPrompt;
 
 
       const systemPrompt = await getSystemPrompt(
         request.userPrompt,
       );
-
-      console.log("systemPrompt: ", systemPrompt)
 
       let contents = [];
 
@@ -76,8 +73,6 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
         });
       } else {
         contents.push({
-          // role: "user",
-          // parts: [{ text: systemPrompt + "\nText:\n" + userPrompt }]
           parts: [{ text: systemPrompt }]
         });
       }

@@ -19,6 +19,11 @@ const main = async (event) => {
   Limit your response to 150 words max.`
   // }
 
+  // document.getElementById("content").textContent = 'Loading ...'; 
+  var loader = document.getElementById("status");
+  console.log("clicked");
+  loader.style.display = 'block';
+
   const response = await chrome.runtime.sendMessage({
     message: "generate",
     userPrompt: userInput
@@ -38,10 +43,12 @@ const main = async (event) => {
     } else if (response.body.candidates?.[0].content) {
       // A normal response was returned
       content = `${response.body.candidates[0].content.parts[0].text}\n\n`;
-      console.log(content)
+      // console.log(content)
       const div = document.createElement("div");
       div.textContent = content;
       document.getElementById("content").innerHTML = marked.parse(div.innerHTML);
+      // document.getElementById("status").textContent = ''; 
+      loader.style.display = 'none';
 
       // Scroll to the bottom of the page
       window.scrollTo(0, document.body.scrollHeight);
@@ -60,7 +67,7 @@ const main = async (event) => {
     document.getElementById("content").innerHTML = marked.parse(div.innerHTML);
 
     // Save the content to the session storage
-    await chrome.storage.session.set({ [`c_${contentIndex}`]: content });
+    // await chrome.storage.session.set({ [`c_${contentIndex}`]: content });
 
 
 };
@@ -68,13 +75,7 @@ const main = async (event) => {
 document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("userForm").addEventListener("submit", main);
 });
-// document.addEventListener("DOMContentLoaded", initialize);
-// document.getElementById("run").addEventListener("click", main);
 
-// document.getElementById("results").addEventListener("click", async () => {
-//   await chrome.tabs.create({ url: chrome.runtime.getURL(`results.html?i=${contentIndex}`) });
-// });
-
-// document.getElementById("options").addEventListener("click", () => {
-//   chrome.runtime.openOptionsPage();
-// }); --> construct options pages 
+document.getElementById("options").addEventListener("click", () => {
+  chrome.runtime.openOptionsPage();
+});
