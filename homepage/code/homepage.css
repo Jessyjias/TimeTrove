@@ -23,6 +23,7 @@ h1{
 .hero{
     padding: 10px 20px 10px 20px;
     background-image: url("../img/landing_page_v2.png");
+    /* background-image: url(https://media.giphy.com/media/duzpaTbCUy9Vu/giphy.gif?cid=790b7611pdgxoi5p765t7e0ywtju2oqy0mc7tnyezpg78xnq&ep=v1_gifs_search&rid=giphy.gif&ct=g); */
     height: 65vh;
     background-size: 100% auto;
     /* background-position: center center; */

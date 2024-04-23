@@ -158,8 +158,8 @@
             </div> -->
 
             <div class="form-group">
-              <label for="textareaField">Additional Info (optional):</label>
-              <textarea class="form-control" id="textareaField" rows="3" placeholder="e.g., My eyes are strained - I prefer activities that I can do with my eyes closed!"></textarea>
+              <label for="addInfoInputField">Additional Info (optional):</label>
+              <textarea class="form-control" id="addInfoInputField" rows="3" placeholder="e.g., My eyes are strained - I prefer activities that I can do with my eyes closed!"></textarea>
             </div>
         </div>
 
@@ -174,6 +174,10 @@
       </div>
 
       </form>
+
+      <p id="content"></p>
+
+
     </div>
 
     <!-- Generate button  -->
@@ -190,5 +194,7 @@
 
 </body>
 
-<script src="popup.js"></script>
+<script src="marked.umd.min.js"></script>
+<script src="popup.js"></script> 
+<!-- type="module" -->
 </html>
