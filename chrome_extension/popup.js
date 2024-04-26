@@ -16,7 +16,7 @@ const main = async (event) => {
 
   var userInput = `I have ${timeInputFieldValue} time available, my location is ${selected_loc}, my current topic of interest: ${selected_topic}, 
   my mood is ${selected_mood}, and ${added_info},  Please suggest 3 bullet points on the creative, personalized, and actionable ways that I can spend my time. 
-  Limit your response to 150 words max.`
+  Limit your response to 150 words max and start the response by a phrase summary.`
   // }
 
   // document.getElementById("content").textContent = 'Loading ...'; 
@@ -50,6 +50,22 @@ const main = async (event) => {
       // document.getElementById("status").textContent = ''; 
       loader.style.display = 'none';
 
+      // Save the current generated content to the local storage
+      const {pastContents} = await chrome.storage.local.get({
+        pastContents: "",
+      });
+      console.log('pastContents saved!')
+      const currentDate = new Date();
+      const timestamp = currentDate.getTime();
+      const curr_inputs = `##### Current time: ${currentDate}
+                          \n Timestamp: ${timestamp} 
+                          \n Available Time: ${timeInputFieldValue}
+                          \n Location: ${selected_loc} 
+                          \n Mood: ${selected_mood} 
+                          \n Topic: ${selected_topic} 
+                          \n Additional Info: ${added_info} \n`; 
+      await chrome.storage.local.set({ pastContents: pastContents+curr_inputs+'Contents: \n'+content });
+
       // Scroll to the bottom of the page
       window.scrollTo(0, document.body.scrollHeight);
     } else {
@@ -65,10 +81,6 @@ const main = async (event) => {
     const div = document.createElement("div");
     div.textContent = content;
     document.getElementById("content").innerHTML = marked.parse(div.innerHTML);
-
-    // Save the content to the session storage
-    // await chrome.storage.session.set({ [`c_${contentIndex}`]: content });
-
 
 };
 

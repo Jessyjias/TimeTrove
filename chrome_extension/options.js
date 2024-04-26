@@ -5,25 +5,35 @@ const restoreOptions = async () => {
     });
   
     document.getElementById("apiKey").value = options.apiKey;
+
+    const {pastContents} = await chrome.storage.local.get({
+        pastContents: "",
+      });
+      console.log(pastContents)
+
+    const div = document.createElement("div");
+    div.textContent = pastContents;
+    document.getElementById("pastContents").innerHTML = marked.parse(div.innerHTML);
   };
   
-  const saveOptions = async () => {
+const saveOptions = async () => {
     const options = {
-      apiKey: document.getElementById("apiKey").value,
+        apiKey: document.getElementById("apiKey").value,
     };
-  
+
     await chrome.storage.local.set(options);
     const status = document.getElementById("status");
     status.textContent = 'saved!'; 
     setTimeout(() => status.textContent = "", 10000);
-  };
-  
-  const initialize = () => {
+    };
+
+const initialize = () => {
     // Set the text of elements with the data-i18n attribute
     // document.querySelectorAll("[data-i18n]").forEach(element => {
     //   element.textContent = chrome.i18n.getMessage(element.getAttribute("data-i18n"));
     // });
     restoreOptions();
+
   };
   
   document.addEventListener("DOMContentLoaded", initialize);
