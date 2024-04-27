@@ -19,8 +19,17 @@
         .form-check {
           margin-right: 3%;
         }
+        .header.h3 {
+          /* font-size: 70px; */
+          /* font-weight: 600; */
+          background-image: linear-gradient(to left, #553c9a, #b393d3);
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
       </style>
 </head>
+
 
 <body style="width: 500px;">
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="padding-top: 0px; padding-bottom: 0px;">
@@ -40,139 +49,73 @@
         <form id="userForm">
 
         <div class="row text-center">
-            <h3>Discover inspiring, bite-sized activities tailored to fit your spare moments. </h3>
+            <h3 style="background-image: conic-gradient(#553c9a, #ee4b2b, #00c2cb, #553c9a);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;"> Discover inspiring, bite-sized activities tailored to fit your spare moments </h3>
         </div>
         
         <!-- User input fields in form  -->
-        <div class="row">
-            <label for="timeInputField">How much free time do you have? </label>
-        <div class="col">
-            <div class="form-group">
-                <input type="text" class="form-control" id="timeInputField" placeholder="duration (10mins, 1hr)...">
-            </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <label>Where are you? </label>
+        <div class="row pb-2">
           <div class="col">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="locOptions" id="locOption1" value="indoor" checked="">
-                <label class="form-check-label" for="locOption1">Indoor</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="locOptions" id="locOption2" value="outdoor" checked="">
-                <label class="form-check-label" for="locOption2">Outdoor</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="locOptions" id="locOption3" value="office" checked="">
-                <label class="form-check-label" for="locOption3">Office</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="locOptions" id="locOption4" value="home" checked="">
-                <label class="form-check-label" for="locOption4">Home</label>
-              </div>
-            <!-- </div> -->
+            <label for="timeInputField">How much time do you have? </label>
+                <input type="text" class="form-control" id="timeInputField" placeholder="duration (10mins, 1hr)...">
+          </div>
+          <div class="col">
+              <label>Where are you? </label>
+              <select id="locOptions" class="form-select">
+                <option value="Indoor">Indoor</option>
+                <option value="Outdoor">Outdoor</option>
+                <option value="Office">Office</option>
+                <option value="Home">Home</option>
+              </select>
           </div>
         </div>
 
-        <div class="row">
-            <label>Topic of interest: </label>
+        <div class="row pb-2">
             <div class="col">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption1" value="Surprise" checked="">
-                <label class="form-check-label" for="topicOption1"><b><i>Surprise Me!</i></b></label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption2" value="Connect" checked="">
-                <label class="form-check-label" for="topicOption2">Connect & Engage</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption3" value="Creative" checked="">
-                <label class="form-check-label" for="topicOption3">Creativity</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption4" value="Personal Growth" checked="">
-                <label class="form-check-label" for="topicOption4">Personal Growth</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption5" value="Destress" checked="">
-                <label class="form-check-label" for="topicOption5">Mindfulness & Destress</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption6" value="Learning" checked="">
-                <label class="form-check-label" for="topicOption6">Learning</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption7" value="Entertainment" checked="">
-                <label class="form-check-label" for="topicOption7">Entertainment</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="topicOptions" id="topicOption8" value="Challenge" checked="">
-                <label class="form-check-label" for="topicOption8">Challenge</label>
-              </div>
-            
-            </div>
-          
-        </div>
-
-        <div class="row">
-            <label>How are you? </label>
-          <div class="col">
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption1" value="happy" checked="">
-                  <label class="form-check-label" for="moodOption1" title="happy">😀</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption2" value="bored" checked="">
-                  <label class="form-check-label" for="moodOption2" title="bored">🥱</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption3" value="thoughtful" checked="">
-                  <label class="form-check-label" for="moodOption3" title="thoughtful and inquisitive"></label>🤔</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption4" value="relieved" checked="">
-                  <label class="form-check-label" for="moodOption4" title="calm, peaceful and relieved"></label>😌</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption5" value="excited" checked="">
-                  <label class="form-check-label" for="moodOption5" title="excited, creative and inspired"></label>🤩</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption6" value="angry" checked="">
-                  <label class="form-check-label" for="moodOption6" title="angry"></label>😡</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption7" value="sad" checked="">
-                  <label class="form-check-label" for="moodOption7" title="sad or pensive"></label>😔</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="moodOptions" id="moodOption8" value="stressed" checked="">
-                  <label class="form-check-label" for="moodOption8" title="overwhelmed or stressed"></label>😣</label>
-                </div>
+                <label>Topic of interest: </label>
+                <select id="topicOptions" class="form-select">
+                  <option value="Surprise"><b><i>Surprise Me!</i></b></option>
+                  <option value="Connect">Connect & Engage</option>
+                  <option value="Creativity">Creativity</option>
+                  <option value="Personal Growth">Personal Growth</option>
+                  <option value="Mindfulness and Destress">Mindfulness & Destress</option>
+                  <option value="Learning">Learning</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Challenge">Challenge</option>
+                </select>
             </div>
 
+            <div class="col">
+              <label>How are you feeling? </label>
+              <select id="moodOptions" class="form-select">
+                <option value="happy">😀 Happy</option>
+                <option value="bored">🥱 Bored</option>
+                <option value="thoughtful and inquisitive">🤔 Inquisitive</option>
+                <option value="relieved">😌 Relieved</option>
+                <option value="excited, creative and inspired">🤩 Excited</option>
+                <option value="angry">😡 angry</option>
+                <option value="sad or pensive">😔 Sad</option>
+                <option value="overwhelmed or stressed">😣 Stressed</option>
+              </select>
+          </div>
         </div>
 
-        <div class="col">
-            <!-- <div class="form-group">
-              <label for="inputField">Input your email to receive ideas! </label>
-              <input type="text" class="form-control" id="inputField" placeholder="e.g., timetrove@gmail.com...">
-            </div> -->
-
+        <div class="row pb-2">
             <div class="form-group">
               <label for="addInfoInputField">Additional Info (optional):</label>
               <textarea class="form-control" id="addInfoInputField" rows="3" placeholder="e.g., My eyes are strained - I prefer activities that I can do with my eyes closed!"></textarea>
             </div>
         </div>
 
-        <div class="row text-center m-3">
-          <h3 for="generateIdeaButton">Start idea generation: </h3>
+        <div class="row text-center pt-2 pb-2">
+          <!-- <h3 for="generateIdeaButton">Explore Ideas Now</h3> -->
           <div class="col text-center">
             <!-- Centered Button -->
             <button type="submit" class="btn btn-primary" id="generateIdeaButton">
-                <img src="img/icon.png" alt="icon image" width="100" height="100"> 
+              <i class="animate-spin fas fa-spinner"></i>
+                <img src="img/icon.png" alt="icon image" width="25" height="25">Generate Ideas
             </button>
           </div>
         </div>
@@ -184,8 +127,14 @@
           <span class="sr-only"></span>
         </div>
       </div>
-      
-      <p id="content"></p>
+      <div class="card text-white bg-primary" id="contentCard" style="display: none;">
+        <!-- <div class="card-header">Header</div> -->
+        <div class="card-body">
+          <!-- <h4 class="card-title">Try these out: </h4> -->
+          <p id="content"></p>
+        </div>
+      </div>
+
     </div>
 
 </body>
@@ -193,4 +142,15 @@
 <script src="marked.umd.min.js"></script>
 <script src="popup.js"></script> 
 <!-- type="module" -->
+
+<footer>
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-reset fw-bold" href="https://timetrove.com/">TimeTrove.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
 </html>

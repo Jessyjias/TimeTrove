@@ -2,9 +2,9 @@ const main = async (event) => {
   event.preventDefault();
   // get user inputs 
   var timeInputFieldValue = document.getElementById("timeInputField").value;
-  var selected_mood = document.querySelector('input[name="moodOptions"]:checked').value;
-  var selected_loc = document.querySelector('input[name="locOptions"]:checked').value;
-  var selected_topic = document.querySelector('input[name="topicOptions"]:checked').value;
+  var selected_mood = document.getElementById('moodOptions').value;
+  var selected_loc = document.getElementById('locOptions').value;
+  var selected_topic = document.getElementById('topicOptions').value;
   var added_info = document.getElementById('addInfoInputField').value;
 
   console.log("Input Field Value:", timeInputFieldValue);
@@ -16,7 +16,7 @@ const main = async (event) => {
 
   var userInput = `I have ${timeInputFieldValue} time available, my location is ${selected_loc}, my current topic of interest: ${selected_topic}, 
   my mood is ${selected_mood}, and ${added_info},  Please suggest 3 bullet points on the creative, personalized, and actionable ways that I can spend my time. 
-  Limit your response to 150 words max and start the response by a phrase summary.`
+  Limit your response to 150 words max and start the response by a phrase summary. `
   // }
 
   // document.getElementById("content").textContent = 'Loading ...'; 
@@ -77,10 +77,12 @@ const main = async (event) => {
     content = `Error: ${response.status}\n\n${response.body.error.message}`;
   }; 
 
-      // Convert the content from Markdown to HTML
+    // Convert the content from Markdown to HTML
+    var contentcard = document.getElementById("contentCard");
+    contentcard.style.display = 'block';
     const div = document.createElement("div");
     div.textContent = content;
-    document.getElementById("content").innerHTML = marked.parse(div.innerHTML);
+    document.getElementById("content").innerHTML = marked.parse(div.innerHTML); 
 
 };
 
