@@ -16,8 +16,8 @@
           /* margin-right: 5px; Adjust the margin as needed */
           font-size: 0.9rem; /* Adjust the font size as needed */
         }
-        .form-check {
-          margin-right: 3%;
+        .form-box {
+          margin: 1%;
         }
         /* .header.h3 {
           font-size: 70px;
@@ -57,6 +57,8 @@
             background: #04AA6D;
             cursor: pointer;
           }
+
+          .button1:hover {background-color: #2c3e50;}
       </style>
 </head>
 
@@ -78,16 +80,16 @@
       <div class="container" style="padding-top: 10px; padding-bottom: 20px; padding-left: 5%; padding-right: 5%;">
         <form id="userForm">
 
-        <div class="row text-center">
+        <div class="row">
             <h3> Discover inspiring, bite-sized activities tailored to fit your spare moments </h3>
         </div>
         
         <!-- User input fields in form  -->
         <div class="row pb-2">
-          <div class="col">
-            <label for="timeInputField">How much time do you have? </label>
+          <div class="col form-box">
+            <label for="timeInputField">How much time do you have?</label>
             <div class="row">
-              <div class="col">
+              <div class="col" style="justify-items: center;">
                 <input type="range" step="5" value="1" min="0" max="60" class="slider" id="slider">
               </div>
               <div class="col">
@@ -96,7 +98,7 @@
             </div>
             
           </div>
-          <div class="col-6">
+          <div class="col form-box">
               <label>Where are you? </label>
               <select id="locOptions" class="form-select">
                 <option value="Indoor">Indoor</option>
@@ -108,7 +110,7 @@
         </div>
 
         <div class="row pb-2">
-            <div class="col">
+            <div class="col form-box">
                 <label>Topic of interest: </label>
                 <select id="topicOptions" class="form-select">
                   <option value="Surprise"><b><i>Surprise Me!</i></b></option>
@@ -122,7 +124,7 @@
                 </select>
             </div>
 
-            <div class="col">
+            <div class="col form-box">
               <label>How are you feeling? </label>
               <select id="moodOptions" class="form-select">
                 <option value="happy">😀 Happy</option>
@@ -138,7 +140,7 @@
         </div>
 
         <div class="row pb-2">
-            <div class="form-group">
+            <div class="form-group form-box">
               <label for="addInfoInputField">Additional Info (optional):</label>
               <textarea class="form-control" id="addInfoInputField" rows="3" placeholder="e.g., My eyes are strained - I prefer activities that I can do with my eyes closed!"></textarea>
             </div>
@@ -148,7 +150,7 @@
           <!-- <h3 for="generateIdeaButton">Explore Ideas Now</h3> -->
           <div class="col text-center">
             <!-- Centered Button -->
-            <button type="submit" class="btn btn-success" id="generateIdeaButton">
+            <button type="submit" class="btn btn-success button1" id="generateIdeaButton">
               <i class="animate-spin fas fa-spinner"></i>
                 <img src="img/icon.png" alt="icon image" width="25" height="25"> Generate Ideas
             </button>
@@ -161,8 +163,15 @@
         <div class="spinner-border" id="status" style="display: none;">
           <span class="sr-only"></span>
         </div>
+        <div class="card text-white bg-info m-2" id="promptRegenerate" 
+            style="display: none; justify-items: center; max-width: 80%;">
+          <div class="card-body" style="padding: 2%;">
+            <h4 style="text-align: center; vertical-align: middle; font-size: medium; ">
+              <i>Don't like these ideas? Tell us your preferences in <b>'Additional Info'</b> and generate again! </i></h4>
+          </div>
+        </div>
       </div>
-      <div id="contentCards" style="display: none">
+      <div id="contentCards" style="display: none; ">
         <!-- <div class="card text-white bg-primary" id="contentCard">
           <div class="card-body">
             <p id="content"></p>
