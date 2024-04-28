@@ -1,5 +1,18 @@
 {
   "dependencies": {
     "@google/generative-ai": "^0.7.1"
-  }
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "name": "timetrove",
+  "description": "TimeTrove is live!",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./styles.css -o ./output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
