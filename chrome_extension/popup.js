@@ -1,22 +1,23 @@
 const main = async (event) => {
   event.preventDefault();
   // get user inputs 
-  var timeInputFieldValue = document.getElementById("timeInputField").value;
+  // var timeInputFieldValue = document.getElementById("timeInputField").value;
+  var timeSlider = document.getElementById("slider").value; 
   var selected_mood = document.getElementById('moodOptions').value;
   var selected_loc = document.getElementById('locOptions').value;
   var selected_topic = document.getElementById('topicOptions').value;
   var added_info = document.getElementById('addInfoInputField').value;
 
-  console.log("Input Field Value:", timeInputFieldValue);
+  console.log("Input Field Value:", timeSlider);
   console.log("Selected Option:", selected_mood, selected_loc, selected_topic);
   console.log("additional info:", added_info);
   const tab = chrome.tabs.query({ active: true, currentWindow: true });
 
   console.log("tab", tab.url), tab;
 
-  var userInput = `I have ${timeInputFieldValue} time available, my location is ${selected_loc}, my current topic of interest: ${selected_topic}, 
-  my mood is ${selected_mood}, and ${added_info},  Please suggest 3 bullet points on the creative, personalized, and actionable ways that I can spend my time. 
-  Limit your response to 150 words max and start the response by a phrase summary. `
+  var userInput = `I have ${timeSlider} time available, my location is ${selected_loc}, my current topic of interest: ${selected_topic}, 
+  my mood is ${selected_mood}, and ${added_info},  Please suggest 3 ideas on the creative, personalized, and actionable ways that I can spend my time. 
+  Limit your response to 150 words max and leave a line between each idea. `
   // }
 
   // document.getElementById("content").textContent = 'Loading ...'; 
@@ -44,9 +45,9 @@ const main = async (event) => {
       // A normal response was returned
       content = `${response.body.candidates[0].content.parts[0].text}\n\n`;
       // console.log(content)
-      const div = document.createElement("div");
-      div.textContent = content;
-      document.getElementById("content").innerHTML = marked.parse(div.innerHTML);
+      // const div = document.createElement("div");
+      // div.textContent = content;
+      // document.getElementById("content").innerHTML = marked.parse(div.innerHTML);
       // document.getElementById("status").textContent = ''; 
       loader.style.display = 'none';
 
@@ -59,7 +60,7 @@ const main = async (event) => {
       const timestamp = currentDate.getTime();
       const curr_inputs = `##### Current time: ${currentDate}
                           \n Timestamp: ${timestamp} 
-                          \n Available Time: ${timeInputFieldValue}
+                          \n Available Time (min): ${timeSlider}
                           \n Location: ${selected_loc} 
                           \n Mood: ${selected_mood} 
                           \n Topic: ${selected_topic} 
@@ -77,16 +78,57 @@ const main = async (event) => {
     content = `Error: ${response.status}\n\n${response.body.error.message}`;
   }; 
 
+    // separate the contents into 3 separate points 
+    let contentIdeas = content.split("\n");
+    let filtered_ideas = contentIdeas.filter(function (el) {
+      return el != null && el != "";
+    });
+    console.log(filtered_ideas)
+    console.log('content: ', content)
+
     // Convert the content from Markdown to HTML
-    var contentcard = document.getElementById("contentCard");
-    contentcard.style.display = 'block';
-    const div = document.createElement("div");
-    div.textContent = content;
-    document.getElementById("content").innerHTML = marked.parse(div.innerHTML); 
+    var contentcards = document.getElementById("contentCards");
+    contentcards.style.display = 'block';
+    
+    for (const element of filtered_ideas) {
+      var ideaCard = getIdeaCard(element);
+      document.getElementById('contentCards').appendChild(ideaCard);  
+
+    }
+    // const div = document.createElement("div");
+    // div.textContent = content;
+    // document.getElementById("content").innerHTML = marked.parse(div.innerHTML); 
+
+    // document.getElementById('contentCards').appendChild(element_card);  
 
 };
 
+const getIdeaCard = (ideaPoint) => {
+  const card_body_p = document.createElement("p");
+  const div = document.createElement("div");
+  div.textContent = ideaPoint;
+  card_body_p.innerHTML = marked.parse(div.innerHTML);
+
+  const card_body = document.createElement('div');
+  card_body.classList.add('card-body');
+  card_body.appendChild(card_body_p); 
+
+  const element_card = document.createElement('div');
+  element_card.classList.add('card', 'text-white', 'bg-primary', 'mb-4');
+  element_card.appendChild(card_body); 
+
+  return element_card; 
+}; 
+
 document.addEventListener("DOMContentLoaded", function(){
+  var slider = document.getElementById("slider");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value+" (min)"; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+    output.innerHTML = this.value+" (min)";
+  };  
   document.getElementById("userForm").addEventListener("submit", main);
 });
 

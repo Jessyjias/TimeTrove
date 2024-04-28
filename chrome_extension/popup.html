@@ -27,6 +27,35 @@
           background-clip: text;
           -webkit-background-clip: text;
         }
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;  
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+          }
+
+          .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; 
+            background: #04AA6D;
+            cursor: pointer;
+          }
+
+          .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+          }
       </style>
 </head>
 
@@ -59,9 +88,17 @@
         <div class="row pb-2">
           <div class="col">
             <label for="timeInputField">How much time do you have? </label>
-                <input type="text" class="form-control" id="timeInputField" placeholder="duration (10mins, 1hr)...">
+            <div class="row">
+              <div class="col">
+                <input type="range" step="5" value="1" min="0" max="60" class="slider" id="slider">
+              </div>
+              <div class="col">
+                <p id="demo">(min)</p>
+              </div>
+            </div>
+            
           </div>
-          <div class="col">
+          <div class="col-6">
               <label>Where are you? </label>
               <select id="locOptions" class="form-select">
                 <option value="Indoor">Indoor</option>
@@ -92,7 +129,7 @@
               <select id="moodOptions" class="form-select">
                 <option value="happy">😀 Happy</option>
                 <option value="bored">🥱 Bored</option>
-                <option value="thoughtful and inquisitive">🤔 Inquisitive</option>
+                <option value="thoughtful and inquisitive">🤔 Thinking </option>
                 <option value="relieved">😌 Relieved</option>
                 <option value="excited, creative and inspired">🤩 Excited</option>
                 <option value="angry">😡 angry</option>
@@ -127,12 +164,12 @@
           <span class="sr-only"></span>
         </div>
       </div>
-      <div class="card text-white bg-primary" id="contentCard" style="display: none;">
-        <!-- <div class="card-header">Header</div> -->
-        <div class="card-body">
-          <!-- <h4 class="card-title">Try these out: </h4> -->
-          <p id="content"></p>
-        </div>
+      <div style="display: none" id="contentCards">
+        <!-- <div class="card text-white bg-primary" id="contentCard">
+          <div class="card-body">
+            <p id="content"></p>
+          </div>
+        </div> -->
       </div>
 
     </div>
@@ -147,7 +184,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2024 Copyright:
-    <a class="text-reset fw-bold" href="https://timetrove.com/">TimeTrove.com</a>
+    <a class="text-reset fw-bold" href="https://timetrove.me/">TimeTrove.me</a>
   </div>
   <!-- Copyright -->
 </footer>

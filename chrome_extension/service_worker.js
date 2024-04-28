@@ -33,7 +33,7 @@ const getSystemPrompt = async (userPrompt) => {
   1. Try this brainteaser: A man is looking at a photograph of someone. His friend asks who it is. The man replies: Brothers and sisters, I have none. But that mans father is my fathers son. Who was in the photograph? Answer: His son. 
   2. Listen to a Philosophy Podcast Episode. Podcast: Philosophize This! Episode: The Stoics - Seneca (Episode 94) Duration: Approximately 20 minutes 
   3. Study a Music Theory Concept. Concept: Introduction to Chord Progressions Activity: Learn about basic chord progressions such as the I-IV-V and ii-V-I progressions. Understanding chord progressions is fundamental to understanding harmony in music. Resource: Music Theory: Chord Progressions Explained. 
-  4. Ponder over this Book Quote. Book: Mans Search for Meaning by Viktor E. Frankl.Quote: Between stimulus and response, there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom. Make sure the entire free slot is utilized, if provided. Lastly, format your response by leaving a line between each bullet point. `;
+  4. Ponder over this Book Quote. Book: Mans Search for Meaning by Viktor E. Frankl.Quote: Between stimulus and response, there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom. Make sure the entire free slot is utilized, if provided. Lastly, format your response by leaving a line between each idea. `;
   return systemPrompt + userPrompt;
 };
 
