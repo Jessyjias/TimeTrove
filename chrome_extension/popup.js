@@ -77,7 +77,7 @@ const main = async (event) => {
     }
   } else {
     // A response error occurred
-    content = `Error: ${response.status}\n\n${response.body.error.message}`;
+    content = `Please check Settings. Error: ${response.status}, ${response.body.error.message}`;
   }; 
 
     // separate the contents into 3 separate points 
@@ -91,39 +91,16 @@ const main = async (event) => {
     var promptRegenerate = document.getElementById("promptRegenerate");
     promptRegenerate.style.display = 'block';
 
-    // Convert the content from Markdown to HTML
     var contentcards = document.getElementById("contentCards");
     contentcards.style.display = 'block';
     
+    // get all response idea cards 
     for (const element of filtered_ideas) {
       var ideaCard = getIdeaCard(element);
       // contentcards.appendChild(ideaCard);  
       contentcards.insertBefore(ideaCard, contentcards.firstChild);
 
     }
-
-    // var card_body_p = document.createElement("p");
-    // var div = document.createElement("div");
-    // div.textContent = "Don't like these ideas? Generate again and tell us your preferences within 'Additional Info'!";
-    // card_body_p.style = 'text-align: center; vertical-align: middle;'
-    // card_body_p.innerHTML = marked.parse(div.innerHTML);
-
-    // var card_body = document.createElement('div');
-    // card_body.classList.add('card-body');
-    // card_body.appendChild(card_body_p); 
-
-    // var element_card = document.createElement('div'); 
-    // element_card.classList.add('card', 'text-white', 'bg-info', 'm-4'); 
-    // // element_card.style = "max-width: 80%; "; 
-    // element_card.appendChild(card_body); 
-    // contentcards.appendChild(element_card); 
-
-
-    // const div = document.createElement("div");
-    // div.textContent = content;
-    // document.getElementById("content").innerHTML = marked.parse(div.innerHTML); 
-
-    // document.getElementById('contentCards').appendChild(element_card);  
 
 };
 
