@@ -92,7 +92,8 @@ const main = async (event) => {
     
     for (const element of filtered_ideas) {
       var ideaCard = getIdeaCard(element);
-      document.getElementById('contentCards').appendChild(ideaCard);  
+      // contentcards.appendChild(ideaCard);  
+      contentcards.insertBefore(ideaCard, contentcards.firstChild);
 
     }
     // const div = document.createElement("div");
