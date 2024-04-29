@@ -1,7 +1,8 @@
 const restoreOptions = async () => {
     // display saved options
     const options = await chrome.storage.local.get({
-      apiKey: "",
+      apiKey: ''
+      // apiKey: ''
     });
   
     document.getElementById("apiKey").value = options.apiKey;
@@ -9,7 +10,7 @@ const restoreOptions = async () => {
     const {pastContents} = await chrome.storage.local.get({
         pastContents: "",
       });
-      console.log(pastContents)
+    console.log(pastContents)
 
     const div = document.createElement("div");
     div.textContent = pastContents;

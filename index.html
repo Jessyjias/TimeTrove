@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="./homepage/img/icon.png">
+  <!-- <link href=”./output.css” rel=”stylesheet”> -->
+
+  <title>TimeTrove</title>
+
+  <style>
+    .img-wrapper {
+    overflow: auto; /* adds scrollbars */
+    height: 50%;
+    position: relative;
+}
+
+  .img-wrapper > img {
+      /* height: 200%; probably looks neater if auto */
+      width: 200%; /* double width image to show only first quarter */
+      vertical-align: bottom; /* moves image to true text bottom */
+  }
+  </style>
+
+
+</head>
+
+<body>
+
+<section class="flex flex-col bg-slate-800 text-white bg-center bg-cover bg-blend-overlay bg-fixed bg-black/30" style="background-image: url('./homepage/img/landing_page_v2.png')">
+  <!-- Navbar -->
+  <nav class="bg-black/80 fixed w-full z-20 top-0 start-0">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://timetrove.me" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="./homepage/img/icon.svg" class="h-10" alt="Flowbite Logo">
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TimeTrove</span>
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <a href="mailto:timetrove.connect@gmail.com" class="m-2 text-black bg-white hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Contact</a>
+          <a href="#" class="m-2 text-white bg-[#3C619F] hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section Content -->
+  <div class="flex-1 flex items-center max-h-screen">
+    <div class="grid max-w-screen-xl px-4 py-4 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-10">
+      <div class="mr-auto place-self-center lg:col-span-6">
+          <h1 class="max-w-xl mb-2 text-4xl font-extrabold font-serif tracking-tight leading-loose md:text-4xl xl:text-6xl dark:text-white">Discover inspiring, bite-sized activities tailored to fit your spare moments.</h1>
+          <!-- <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"></p> -->
+          <h2 class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+              Get started now
+              <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </h2>
+          <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border border-gray-300 rounded-lg hover:bg-[#3C619F] focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+              Add to Chrome Browser
+          </a> 
+      </div>
+      <div class="mb-2 place-self-center lg:col-span-4 img-wrapper rounded-lg">
+          <img class="transition-all duration-300 rounded-lg hover:scale-105" src="./homepage/img/extension_screenshot.png" alt="mockup">
+      </div>                
+  </div>
+  </div>
+</section>
+
+<section class="bg-black min-h-screen">
+  <div class="py-8 px-8 items-center mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+      <div class="max-w-screen-md mt-16 mb-8 lg:mb-16">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 text-white">Make use of your fragmented time! </h2>
+      </div>
+      <div class="space-x-4 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-2 md:gap-12 md:space-y-0"> 
+        <!-- col: youtube vid -->
+        <div class="flex justify-center items-center aspect-w-9 aspect-h-16">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Dl-BdxNRUqs?si=U5xINivhkHnl16ye" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- col: features -->
+        <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-2 md:gap-12 md:space-y-0 ml-8">
+          <div>
+              <div class="flex justify-center items-center mb-4 w-10 h-10 bg-primary-100 lg:h-20 lg:w-20 bg-primary-900">
+                <img class="border-4 border-solid rounded-full border-white" src="homepage/img/wildcard.png" alt="connect">
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-white">Wild Card!</h3>
+              <p class="text-gray-200 dark:text-white">Discover creative ideas that spark joy.</p>
+            </div>
+          <div>
+              <div class="flex justify-center items-center mb-4 w-10 h-10 bg-primary-100 lg:h-20 lg:w-20 bg-primary-900">
+                <img class="border-4 border-solid rounded-full border-white" src="homepage/img/connect_engage.png" alt="connect" style="border-radius: 50%;">
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-white">Connect & Engage</h3>
+              <p class="text-gray-200 dark:text-white">Build connections with social suggestions.</p>
+          </div>
+          <div>
+              <div class="flex justify-center items-center mb-4 w-10 h-10 bg-primary-100 lg:h-20 lg:w-20 bg-primary-900">
+                <img class="border-4 border-solid rounded-full border-white" src="homepage/img/wellness_relax.png" alt="connect" style="border-radius: 50%;">
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-white">Wellness & Relaxation</h3>
+              <p class="text-gray-200 dark:text-white">Get tips to boost physical & mental well-being.</p>
+          </div>
+          <div>
+              <div class="flex justify-center items-center mb-4 w-10 h-10 bg-primary-100 lg:h-20 lg:w-20 bg-primary-900">
+                <img class="border-4 border-solid rounded-full border-white" src="homepage/img/entertainment.png" alt="connect" style="border-radius: 50%;">
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-white">Entertainment</h3>
+              <p class="text-gray-200 dark:text-white">Explore fun with tailored entertainment options.</p>
+          </div>
+        </div>
+      </div>
+          
+      </div>
+  </div>
+</section>
+
+<footer class="bg-gray-900 shadow-white dark:bg-gray-900">
+  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+      <!-- <hr class="border-gray-200 sm:mx-auto dark:border-gray-700" /> -->
+      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="#" class="hover:underline">TimeTrove™</a>. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+
+</html>

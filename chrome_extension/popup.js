@@ -1,9 +1,18 @@
 const main = async (event) => {
   event.preventDefault();
+
+  const { apiKey } = await chrome.storage.local.get({ apiKey: "" });
+  if (!apiKey) {
+    // if no API provided in settings 
+    const options = {
+      apiKey: 'AIzaSyD65uumvB0XuW6NHVn0QrkJk6NVeEE7o8k'
+    };
+    await chrome.storage.local.set(options);
+  }
+
+  
   var promptRegenerate = document.getElementById("promptRegenerate");
   promptRegenerate.style.display = 'none';
-  // get user inputs 
-  // var timeInputFieldValue = document.getElementById("timeInputField").value;
   var timeSlider = document.getElementById("slider").value; 
   var selected_mood = document.getElementById('moodOptions').value;
   var selected_loc = document.getElementById('locOptions').value;
@@ -129,7 +138,8 @@ document.addEventListener("DOMContentLoaded", function(){
   // Update the current slider value (each time you drag the slider handle)
   slider.oninput = function() {
     output.innerHTML = this.value+" (min)";
-  };  
+  }; 
+
   document.getElementById("userForm").addEventListener("submit", main);
 });
 
