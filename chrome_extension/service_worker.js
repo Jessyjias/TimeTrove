@@ -1,11 +1,3 @@
-const getModelId = (taskOption) => {
-  if (taskOption === "image") {
-    return "gemini-pro-vision";
-  } else {
-    return "gemini-1.0-pro";
-  }
-};
-
 const tryJsonParse = (text) => {
   try {
     return JSON.parse(text);
@@ -41,7 +33,6 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
   (async () => {
     if (request.message === "chunk") {
       // Split the user prompt
-      // const modelId = getModelId(request.taskOption);
       const modelId = "gemini-1.0-pro"; 
       const userPromptChunks = chunkText(request.userPrompt, getCharacterLimit(modelId, request.task));
       sendResponse(userPromptChunks);
@@ -54,28 +45,10 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
         request.userPrompt,
       );
 
-      let contents = [];
-
-      if (request.taskOption === "image") {
-        const [mediaInfo, mediaData] = userPrompt.split(',');
-        const mediaType = mediaInfo.split(':')[1].split(';')[0];
-
-        contents.push({
-          parts: [
-            { text: systemPrompt },
-            {
-              inline_data: {
-                mime_type: mediaType,
-                data: mediaData
-              }
-            }
-          ]
-        });
-      } else {
-        contents.push({
-          parts: [{ text: systemPrompt }]
-        });
-      }
+      let contents = []; 
+      contents.push({
+        parts: [{ text: systemPrompt }]
+      });
 
       try {
         const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.0-pro:generateContent`, {
