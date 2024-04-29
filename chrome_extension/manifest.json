@@ -1,7 +1,7 @@
 {
     "name": "TimeTrove - Extension",
     "description": "Discover inspiring, bite-sized activities tailored to fit your spare moments.",
-    "version": "0.0.0.1",
+    "version": "0.0.1",
     "manifest_version": 3,
     "background": {
       "service_worker": "service_worker.js"

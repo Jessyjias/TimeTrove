@@ -2,7 +2,6 @@ const restoreOptions = async () => {
     // display saved options
     const options = await chrome.storage.local.get({
       apiKey: ''
-      // apiKey: ''
     });
   
     document.getElementById("apiKey").value = options.apiKey;
@@ -29,12 +28,7 @@ const saveOptions = async () => {
     };
 
 const initialize = () => {
-    // Set the text of elements with the data-i18n attribute
-    // document.querySelectorAll("[data-i18n]").forEach(element => {
-    //   element.textContent = chrome.i18n.getMessage(element.getAttribute("data-i18n"));
-    // });
     restoreOptions();
-
   };
   
   document.addEventListener("DOMContentLoaded", initialize);

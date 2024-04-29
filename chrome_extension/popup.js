@@ -3,7 +3,7 @@ const main = async (event) => {
 
   const { apiKey } = await chrome.storage.local.get({ apiKey: "" });
   if (!apiKey) {
-    // if no API provided in settings 
+    // if no API provided in settings - provide api key for hackathon purposes  
     const options = {
       apiKey: 'AIzaSyD65uumvB0XuW6NHVn0QrkJk6NVeEE7o8k'
     };
@@ -29,9 +29,7 @@ const main = async (event) => {
   var userInput = `I have ${timeSlider} time available, my location is ${selected_loc}, my current topic of interest: ${selected_topic}, 
   my mood is ${selected_mood}, and ${added_info},  Please suggest 3 ideas on the creative, personalized, and actionable ways that I can spend my time. 
   Limit your response to 150 words max and leave a line between each idea. `
-  // }
 
-  // document.getElementById("content").textContent = 'Loading ...'; 
   var loader = document.getElementById("status");
   console.log("clicked");
   loader.style.display = 'block';
@@ -55,11 +53,6 @@ const main = async (event) => {
     } else if (response.body.candidates?.[0].content) {
       // A normal response was returned
       content = `${response.body.candidates[0].content.parts[0].text}\n\n`;
-      // console.log(content)
-      // const div = document.createElement("div");
-      // div.textContent = content;
-      // document.getElementById("content").innerHTML = marked.parse(div.innerHTML);
-      // document.getElementById("status").textContent = ''; 
       loader.style.display = 'none';
 
       // Save the current generated content to the local storage
@@ -89,26 +82,25 @@ const main = async (event) => {
     content = `Please check Settings. Error: ${response.status}, ${response.body.error.message}`;
   }; 
 
-    // separate the contents into 3 separate points 
+    // separate the contents into separate points 
     let contentIdeas = content.split("\n");
     let filtered_ideas = contentIdeas.filter(function (el) {
       return el != null && el != "";
     });
-    console.log(filtered_ideas)
     console.log('content: ', content)
 
+    // show regenerate info prompt to users
     var promptRegenerate = document.getElementById("promptRegenerate");
     promptRegenerate.style.display = 'block';
 
+    // show generated contents 
     var contentcards = document.getElementById("contentCards");
     contentcards.style.display = 'block';
     
     // get all response idea cards 
     for (const element of filtered_ideas) {
       var ideaCard = getIdeaCard(element);
-      // contentcards.appendChild(ideaCard);  
       contentcards.insertBefore(ideaCard, contentcards.firstChild);
-
     }
 
 };
@@ -140,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function(){
     output.innerHTML = this.value+" (min)";
   }; 
 
+  // Listen for submission of inputs 
   document.getElementById("userForm").addEventListener("submit", main);
 });
 
