@@ -95,3 +95,12 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
 
   return true;
 });
+
+// to-do: add onboarding html 
+// chrome.runtime.onInstalled.addListener(({reason}) => {
+//   if (reason === 'install') {
+//     chrome.tabs.create({
+//       url: "onboarding.html"
+//     });
+//   }
+// });
