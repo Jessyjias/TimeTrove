@@ -26,8 +26,8 @@ const main = async (event) => {
 
   console.log("tab", tab.url), tab;
 
-  var userInput = `I have ${timeSlider} time available, my location is ${selected_loc}, my current topic of interest: ${selected_topic}, 
-  my mood is ${selected_mood}, and ${added_info},  Please suggest 3 ideas on the creative, personalized, and actionable ways that I can spend my time. 
+  var userInput = `I have ${timeSlider} minutes time available, my location is ${selected_loc}, my current topic of interest: ${selected_topic}, 
+  I'm feeling ${selected_mood}, and ${added_info},  Please suggest 3 ideas on the creative, personalized, and actionable ways that I can spend my time. 
   Limit your response to 150 words max and leave a line between each idea. `
 
   var loader = document.getElementById("status");
