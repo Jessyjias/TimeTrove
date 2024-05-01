@@ -2,7 +2,7 @@
 
 https://www.timetrove.me/
 
-TimeTrove will be available on the chrome extension store, but is currently under review. 
+TimeTrove will be available on the chrome extension store (it is currently under review). 
 
 Meanwhile, try TimeTrove locally on your browser: 
 1. Download the chrome_extension.zip folder located in this repository. 
