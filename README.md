@@ -2,11 +2,11 @@
 
 https://www.timetrove.me/
 
-
 **TimeTrove is live! Visit [Chrome Web Store](https://chromewebstore.google.com/detail/timetrove-extension/ljknocbobpfdcmdaiggpchoeijbapmbg?hl=en&authuser=0) to download**
 
 
-Try TimeTrove locally on your browser: 
+Alternatively, try TimeTrove locally on your browser: 
+
 1. Download the chrome_extension.zip folder located in this repository. 
 2. Unzip the folder, and navigate to `chrome://extensions/`. 
 3. On the top right corner, turn 'Developer Mode" on. 
